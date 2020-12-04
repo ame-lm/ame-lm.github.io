@@ -1,7 +1,8 @@
 ---
 layout: home
+title: 目录
 ---
-# Content
+# Contents
 
 ## [book_1](/books/book_1)
 
