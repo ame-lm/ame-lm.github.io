@@ -1,0 +1,10 @@
+{
+    "tille": "gitbook title",
+    "author": "ame-lm",
+    "description": "des...",
+    "links": {
+        "sidebar": {
+            "homepage": "www.baidu.com"
+        }
+    }
+}
