@@ -1,52 +1,46 @@
-name: Node.js CI
+name: Deploy
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+   
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [10.x]
-
     steps:
-    # checkout
     - name: Checkout repo 
       uses: actions/checkout@v2
-    # ruby
+     
     - name: Set up Ruby
       uses: ruby/setup-ruby@21351ecc0a7c196081abca5dc55b08f085efe09a
       with:
         ruby-version: 2.7.1
-    # node.js
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    # gitbook
+     
     - name: Install gitbook
       run: | 
         npm install -g gitbook-cli 
         gitbook -V
-    # ssh
+        
     - name: Setup ssh
       run: |
         mkdir -p ~/.ssh/
         echo "${{secrets.SSH_KEY}}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
-    # git
+        
     - name: Setup git
       run: |
         git config --global user.name "ame-lm"
         git config --global user.email "ame-lm@qq.com"
-    # build
+        
     - name: Build
       run: |
         cp .ame/* ./ -rf
@@ -58,12 +52,15 @@ jobs:
         cp _site /tmp/ -rf
         rm * -rf
         mv /tmp/_site/* ./
-    # push
+        
     - name: Push
       run: | 
         git add --a
         git commit -m "update..."
         git push origin main:gh-pages -f
+        
+    - name: Clean
+      run: |
         rm ~/.ssh -rf
         rm /tmp/_books -rf
         echo ok
