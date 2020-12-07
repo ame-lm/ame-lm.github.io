@@ -44,7 +44,9 @@ jobs:
     - name: Build
       run: |
         cp .ame/* ./ -rf
-        gitbook build _books/book_1/ books/book_1
+        gitbook build _books/prog/ books/prog
+        gitbook build _books/sche/ books/sche
+        gitbook build _books/tools/ books/tools
         # ...
         rm _books -rf
         bundle install
