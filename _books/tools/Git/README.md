@@ -1,1 +1,1 @@
-**this is chap2**
+> 记录 Git 使用
