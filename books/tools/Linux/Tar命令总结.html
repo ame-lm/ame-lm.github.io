@@ -1,0 +1,659 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Tar命令总结 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Git/" />
+    
+    
+    <link rel="prev" href="Apt使用总结.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ame-lm.github.io/" target="_blank" class="custom-link">首页</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Apt使用总结.html">
+            
+                <a href="Apt使用总结.html">
+            
+                    
+                    Apt使用总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="Tar命令总结.html">
+            
+                <a href="Tar命令总结.html">
+            
+                    
+                    Tar命令总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Git/Git基础命令总结.html">
+            
+                <a href="../Git/Git基础命令总结.html">
+            
+                    
+                    Git基础命令总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Git/Git拣选操作总结">
+            
+                <span>
+            
+                    
+                    Git拣选操作总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Git/Git变基操作总结">
+            
+                <span>
+            
+                    
+                    Git变基操作总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Git/Git标签管理总结">
+            
+                <span>
+            
+                    
+                    Git标签管理总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Git/Git分支管理策略">
+            
+                <span>
+            
+                    
+                    Git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Tar命令总结</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="tar-&#x547D;&#x4EE4;&#x603B;&#x7ED3;">tar &#x547D;&#x4EE4;&#x603B;&#x7ED3;</h1>
+<h2 id="&#x9009;&#x9879;">&#x9009;&#x9879;</h2>
+<blockquote>
+<ul>
+<li><p>-c</p>
+<p>create &#x521B;&#x5EFA;&#x5F52;&#x6863;&#x6587;&#x4EF6;</p>
+</li>
+<li><p>-x</p>
+<p>extract &#x63D0;&#x53D6;&#x5F52;&#x6863;&#x6587;&#x4EF6;</p>
+</li>
+<li><p>-v</p>
+<p>verbose &#x663E;&#x793A;&#x8BE6;&#x60C5;</p>
+</li>
+<li><p>-f</p>
+<p>file &#x64CD;&#x4F5C;&#x6587;&#x4EF6;. </p>
+</li>
+<li><p>-t</p>
+<p>&#x663E;&#x793A;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#x5185;&#x5BB9;</p>
+</li>
+<li><p>-j</p>
+<p>&#x8C03;&#x7528; bzip2</p>
+</li>
+<li><p>-z</p>
+<p>&#x8C03;&#x7528; gzip</p>
+</li>
+<li><p>-r</p>
+<p>&#x8FFD;&#x52A0;/&#x66F4;&#x65B0;&#x6587;&#x4EF6;(&#x5939;)&#x5230;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x5F52;&#x6863;&#x6587;&#x4EF6;</p>
+</li>
+<li><p>-wildcards</p>
+<p>&#x901A;&#x914D;&#x7B26;</p>
+</li>
+<li><p>-C</p>
+<p>&#x6307;&#x5B9A;&#x76EE;&#x5F55;</p>
+</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;</p>
+<ul>
+<li>-f &#x9009;&#x9879;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#xFF0C;&#x6CA1;&#x6709;&#x7684;&#x8BDD;&#x547D;&#x4EE4;&#x5C06;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x6267;&#x884C;</li>
+</ul>
+</blockquote>
+<h2 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h2>
+<h3 id="0">0.</h3>
+<pre><code class="lang-shell">ame@LAPTOP-B4JLMD5L:/tmp$ ls
+file_1  file_2  file_3  file_4  file_5
+</code></pre>
+<h3 id="1-&#x521B;&#x5EFA;tar&#x6587;&#x4EF6;">1. &#x521B;&#x5EFA;.tar&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-shell">ame@LAPTOP-B4JLMD5L:/tmp$ tar cvf e1.tar file_1 file_2 file_3
+file_1
+file_2
+file_3
+ame@LAPTOP-B4JLMD5L:/tmp$ tree
+.
+&#x251C;&#x2500;&#x2500; e1.tar
+&#x251C;&#x2500;&#x2500; file_1
+&#x251C;&#x2500;&#x2500; file_2
+&#x251C;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; file_4
+&#x2514;&#x2500;&#x2500; file_5
+
+0 directories, 6 files
+</code></pre>
+<h3 id="2-&#x521B;&#x5EFA;targztarbz2&#x6587;&#x4EF6;">2. &#x521B;&#x5EFA;.tar.gz/.tar.bz2&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-shell">ame@LAPTOP-B4JLMD5L:/tmp$ tar cvfz e2.tar.gz file_1 file_2 file_3
+file_1
+file_2
+file_3
+ame@LAPTOP-B4JLMD5L:/tmp$ tar cvfj e2.tar.bz2 file_1 file_2 file_3
+file_1
+file_2
+file_3
+ame@LAPTOP-B4JLMD5L:/tmp$ tree
+.
+&#x251C;&#x2500;&#x2500; e1.tar
+&#x251C;&#x2500;&#x2500; e2.tar.bz2
+&#x251C;&#x2500;&#x2500; e2.tar.gz
+&#x251C;&#x2500;&#x2500; file_1
+&#x251C;&#x2500;&#x2500; file_2
+&#x251C;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; file_4
+&#x2514;&#x2500;&#x2500; file_5
+
+0 directories, 8 files
+</code></pre>
+<h3 id="3-&#x63D0;&#x53D6;tartargztarbz2&#x6587;&#x4EF6;">3. &#x63D0;&#x53D6;.tar/.tar.gz/.tar.bz2&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-shell">ame@LAPTOP-B4JLMD5L:/tmp$ mkdir dir3
+ame@LAPTOP-B4JLMD5L:/tmp$ tar xvf e1.tar -C dir3
+file_1
+file_2
+file_3
+ame@LAPTOP-B4JLMD5L:/tmp$ tree
+.
+&#x251C;&#x2500;&#x2500; dir3
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; e1.tar
+&#x251C;&#x2500;&#x2500; e2.tar.bz2
+&#x251C;&#x2500;&#x2500; e2.tar.gz
+&#x251C;&#x2500;&#x2500; file_1
+&#x251C;&#x2500;&#x2500; file_2
+&#x251C;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; file_4
+&#x2514;&#x2500;&#x2500; file_5
+
+1 directory, 11 files
+ame@LAPTOP-B4JLMD5L:/tmp$ mkdir dir4.1
+ame@LAPTOP-B4JLMD5L:/tmp$ mkdir dir4.2
+ame@LAPTOP-B4JLMD5L:/tmp$ tar xvf e2.tar.gz -C dir4.1
+file_1
+file_2
+file_3
+ame@LAPTOP-B4JLMD5L:/tmp$ tar xvf e2.tar.bz2 -C dir4.2
+file_2
+file_2
+file_3
+ame@LAPTOP-B4JLMD5L:/tmp$ tree
+.
+&#x251C;&#x2500;&#x2500; dir3
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; dir4.1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; dir4.2
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; e1.tar
+&#x251C;&#x2500;&#x2500; e2.tar.bz2
+&#x251C;&#x2500;&#x2500; e2.tar.gz
+&#x251C;&#x2500;&#x2500; file_1
+&#x251C;&#x2500;&#x2500; file_2
+&#x251C;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; file_4
+&#x2514;&#x2500;&#x2500; file_5
+
+3 directories, 16 files
+</code></pre>
+<h3 id="4-&#x5217;&#x51FA;tartargztarbz2&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;">4. &#x5217;&#x51FA;.tar/.tar.gz/.tar.bz2&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;</h3>
+<pre><code class="lang-shell">ame@LAPTOP-B4JLMD5L:/tmp$ tar tvf e1.tar 
+-rw-rw-rw- ame/ame           7 2020-05-09 17:30 file_1
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_2
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_3
+
+ame@LAPTOP-B4JLMD5L:/tmp$ tar tvf e2.tar.gz 
+-rw-rw-rw- ame/ame           7 2020-05-09 17:30 file_1
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_2
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_3
+ame@LAPTOP-B4JLMD5L:/tmp$ tar tvf e2.tar.bz2 
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_1
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_2
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_3
+</code></pre>
+<h3 id="5-&#x4ECE;tartargztarbz2&#x6587;&#x4EF6;&#x4E2D;&#x63D0;&#x53D6;&#x89E3;&#x538B;&#x7279;&#x5B9A;&#x5355;&#x4E2A;&#x591A;&#x4E2A;&#x6587;&#x4EF6;">5. &#x4ECE;.tar/.tar.gz/.tar.bz2&#x6587;&#x4EF6;&#x4E2D;&#x63D0;&#x53D6;(&#x89E3;&#x538B;)&#x7279;&#x5B9A;(&#x5355;&#x4E2A;/&#x591A;&#x4E2A;)&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-shell">ame@LAPTOP-B4JLMD5L:/tmp$ mkdir dir7.1 dir7.2 dir7.3
+ame@LAPTOP-B4JLMD5L:/tmp$ tar xvf e1.tar -C dir7.1 file_1
+file_1
+ame@LAPTOP-B4JLMD5L:/tmp$ tar xvf e2.tar.gz -C dir7.2 file_1 file_2
+file_1
+file_2
+ame@LAPTOP-B4JLMD5L:/tmp$ tar xvf e2.tar.bz2 -C dir7.3 file_1 file_2 file_3
+file_1
+file_2
+file_3
+ame@LAPTOP-B4JLMD5L:/tmp$ tree
+.
+&#x251C;&#x2500;&#x2500; dir3
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; dir4.1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; dir4.2
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; dir7.1
+&#x2502;   &#x2514;&#x2500;&#x2500; file_1
+&#x251C;&#x2500;&#x2500; dir7.2
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x2514;&#x2500;&#x2500; file_2
+&#x251C;&#x2500;&#x2500; dir7.3
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; e1.tar
+&#x251C;&#x2500;&#x2500; e2.tar.bz2
+&#x251C;&#x2500;&#x2500; e2.tar.gz
+&#x251C;&#x2500;&#x2500; file_1
+&#x251C;&#x2500;&#x2500; file_2
+&#x251C;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; file_4
+&#x2514;&#x2500;&#x2500; file_5
+
+6 directories, 22 files
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;:</strong></p>
+<ul>
+<li>-C&#x9009;&#x9879;&#x5E94;&#x8BE5;&#x653E;&#x5728;&#x6587;&#x4EF6;&#x540D;&#x524D;&#x9762;. &#x5426;&#x5219;tar&#x547D;&#x4EE4;, &#x4F1A;&#x8BA4;&#x4E3A;-C&#x662F;&#x6587;&#x4EF6;&#x540D;. </li>
+</ul>
+<h3 id="6-&#x6309;&#x901A;&#x914D;&#x7B26;&#x4ECE;tartargztarbz2&#x6587;&#x4EF6;&#x4E2D;&#x63D0;&#x53D6;&#x89E3;&#x538B;&#x7279;&#x5B9A;&#x6587;&#x4EF6;">6. &#x6309;&#x901A;&#x914D;&#x7B26;&#x4ECE;.tar/.tar.gz/.tar.bz2&#x6587;&#x4EF6;&#x4E2D;&#x63D0;&#x53D6;(&#x89E3;&#x538B;)&#x7279;&#x5B9A;&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-shell">ame@LAPTOP-B4JLMD5L:/tmp$ mkdir dir8.1 dir8.2 dir8.3
+ame@LAPTOP-B4JLMD5L:/tmp$ tar xvf e1.tar -C dir8.1 --wildcards &apos;file*&apos;
+file_1
+file_2
+file_3
+ame@LAPTOP-B4JLMD5L:/tmp$ tar xvf e2.tar.gz -C dir8.2 --wildcards &apos;file*&apos;
+file_1
+file_2
+file_3
+ame@LAPTOP-B4JLMD5L:/tmp$ tar xvf e2.tar.bz2 -C dir8.3 --wildcards &apos;file*&apos;
+file_1
+file_2
+file_3
+ame@LAPTOP-B4JLMD5L:/tmp$ tree
+.
+&#x251C;&#x2500;&#x2500; dir3
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; dir4.1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; dir4.2
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; dir7.1
+&#x2502;   &#x2514;&#x2500;&#x2500; file_1
+&#x251C;&#x2500;&#x2500; dir7.2
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x2514;&#x2500;&#x2500; file_2
+&#x251C;&#x2500;&#x2500; dir7.3
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; dir8.1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; dir8.2
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; dir8.3
+&#x2502;   &#x251C;&#x2500;&#x2500; file_1
+&#x2502;   &#x251C;&#x2500;&#x2500; file_2
+&#x2502;   &#x2514;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; e1.tar
+&#x251C;&#x2500;&#x2500; e2.tar.bz2
+&#x251C;&#x2500;&#x2500; e2.tar.gz
+&#x251C;&#x2500;&#x2500; file_1
+&#x251C;&#x2500;&#x2500; file_2
+&#x251C;&#x2500;&#x2500; file_3
+&#x251C;&#x2500;&#x2500; file_4
+&#x2514;&#x2500;&#x2500; file_5
+
+9 directories, 31 files
+</code></pre>
+<h3 id="7-&#x8FFD;&#x52A0;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x5230;tartargztarbz2&#x6587;&#x4EF6;">7. &#x8FFD;&#x52A0;&#x6587;&#x4EF6;/&#x76EE;&#x5F55;&#x5230;.tar/.tar.gz/.tar.bz2&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-shell">ame@LAPTOP-B4JLMD5L:/tmp$ tar cvf e9.tar file_1
+file_1
+ame@LAPTOP-B4JLMD5L:/tmp$ tar rvf e9.tar file_2
+file_2
+ame@LAPTOP-B4JLMD5L:/tmp$ tar rvf e9.tar file_3 file_4 
+file_3
+file_4
+ame@LAPTOP-B4JLMD5L:/tmp$ tar rvf e9.tar file_3 dir3 file_5
+file_3
+dir3/
+dir3/file_1
+dir3/file_2
+dir3/file_3
+file_5
+ame@LAPTOP-B4JLMD5L:/tmp$ tar tvf e9.tar 
+-rw-rw-rw- ame/ame           7 2020-05-09 17:30 file_1
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_2
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_3
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_4
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_3
+drwxrwxrwx ame/ame           0 2020-05-09 19:31 dir3/
+-rw-rw-rw- ame/ame           7 2020-05-09 17:30 dir3/file_1
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 dir3/file_2
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 dir3/file_3
+-rw-rw-rw- ame/ame           7 2020-05-09 17:31 file_5
+</code></pre>
+<h3 id="8-&#x8FFD;&#x52A0;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x5230;targztarbz2&#x6587;&#x4EF6;">8. &#x8FFD;&#x52A0;&#x6587;&#x4EF6;/&#x76EE;&#x5F55;&#x5230;.tar.gz/.tar.bz2&#x6587;&#x4EF6;</h3>
+<p>&#x4E0D;&#x652F;&#x6301;. </p>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<p>[1]. <a href="https://www.tecmint.com/18-tar-command-examples-in-linux/" target="_blank">https://www.tecmint.com/18-tar-command-examples-in-linux/</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Apt使用总结.html" class="navigation navigation-prev " aria-label="Previous page: Apt使用总结">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Git/" class="navigation navigation-next " aria-label="Next page: Git">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Tar命令总结","level":"1.2.2","depth":2,"next":{"title":"Git","level":"1.3","depth":1,"path":"Git/README.md","ref":"Git/README.md","articles":[{"title":"Git基础命令总结","level":"1.3.1","depth":2,"path":"Git/Git基础命令总结.md","ref":"Git/Git基础命令总结.md","articles":[]},{"title":"Git拣选操作总结","level":"1.3.2","depth":2,"path":"Git/Git拣选操作总结","ref":"Git/Git拣选操作总结","articles":[]},{"title":"Git变基操作总结","level":"1.3.3","depth":2,"path":"Git/Git变基操作总结","ref":"Git/Git变基操作总结","articles":[]},{"title":"Git标签管理总结","level":"1.3.4","depth":2,"path":"Git/Git标签管理总结","ref":"Git/Git标签管理总结","articles":[]},{"title":"Git分支管理策略","level":"1.3.5","depth":2,"path":"Git/Git分支管理策略","ref":"Git/Git分支管理策略","articles":[]}]},"previous":{"title":"Apt使用总结","level":"1.2.1","depth":2,"path":"Linux/Apt使用总结.md","ref":"Linux/Apt使用总结.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"首页":"https://ame-lm.github.io/"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"Linux/Tar命令总结.md","mtime":"2021-01-31T09:49:24.786Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-31T09:50:15.713Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

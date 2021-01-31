@@ -1,0 +1,534 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Git基础命令总结 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Git拣选操作总结" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ame-lm.github.io/" target="_blank" class="custom-link">首页</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Linux/">
+            
+                <a href="../Linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Linux/Apt使用总结.html">
+            
+                <a href="../Linux/Apt使用总结.html">
+            
+                    
+                    Apt使用总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Linux/Tar命令总结.html">
+            
+                <a href="../Linux/Tar命令总结.html">
+            
+                    
+                    Tar命令总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="Git基础命令总结.html">
+            
+                <a href="Git基础命令总结.html">
+            
+                    
+                    Git基础命令总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="Git拣选操作总结">
+            
+                <span>
+            
+                    
+                    Git拣选操作总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="Git变基操作总结">
+            
+                <span>
+            
+                    
+                    Git变基操作总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="Git标签管理总结">
+            
+                <span>
+            
+                    
+                    Git标签管理总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="Git分支管理策略">
+            
+                <span>
+            
+                    
+                    Git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Git基础命令总结</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="git-&#x57FA;&#x7840;&#x547D;&#x4EE4;&#x603B;&#x7ED3;">Git &#x57FA;&#x7840;&#x547D;&#x4EE4;&#x603B;&#x7ED3;</h1>
+<h2 id="&#x57FA;&#x672C;&#x64CD;&#x4F5C;">&#x57FA;&#x672C;&#x64CD;&#x4F5C;</h2>
+<pre><code class="lang-shell">git init [path]
+</code></pre>
+<blockquote>
+<ul>
+<li><strong>&#x521D;&#x59CB;&#x5316;&#x4ED3;&#x5E93;</strong>&#xFF1A; path &#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git add [files]
+</code></pre>
+<blockquote>
+<ul>
+<li><strong>&#x8DDF;&#x8E2A;</strong>&#xFF1A;&#x5C06;&#x6587;&#x4EF6;&#x4ECE; Untracked &#x72B6;&#x6001;&#x53D8;&#x4E3A; Tracked &#x72B6;&#x6001;&#x3002;</li>
+<li><strong>&#x6682;&#x5B58;</strong>&#xFF1A;&#x5C06;&#x6587;&#x4EF6;&#x4ECE; Unstaged &#x72B6;&#x6001;&#x53D8;&#x4E3A; Staged &#x72B6;&#x6001;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git commit -m &quot;...&quot;
+</code></pre>
+<blockquote>
+<ul>
+<li><strong>&#x63D0;&#x4EA4;</strong>&#xFF1A;&#x5C06;&#x6587;&#x4EF6;&#x4ECE; Staged &#x72B6;&#x6001;&#x53D8;&#x4E3A; commited &#x72B6;&#x6001;&#xFF08;&#x63D0;&#x4EA4;&#x5230;&#x4ED3;&#x5E93;&#x4E2D;&#xFF09;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git status
+</code></pre>
+<blockquote>
+<ul>
+<li><strong>&#x72B6;&#x6001;</strong>&#xFF1A;&#x663E;&#x793A;&#x4ED3;&#x5E93;&#x4E2D;&#x6587;&#x4EF6;&#x7684; Git &#x72B6;&#x6001;&#x3002;</li>
+</ul>
+</blockquote>
+<h2 id="&#x7248;&#x672C;&#x63A7;&#x5236;">&#x7248;&#x672C;&#x63A7;&#x5236;</h2>
+<h3 id="&#x67E5;&#x770B;&#x5386;&#x53F2;&#x4FE1;&#x606F;">&#x67E5;&#x770B;&#x5386;&#x53F2;&#x4FE1;&#x606F;</h3>
+<pre><code class="lang-shell">git log
+</code></pre>
+<blockquote>
+<ul>
+<li><p>&#x663E;&#x793A; HEAD &#x6307;&#x9488;&#xFF0C;&#x53CA;&#x5176;&#x5148;&#x7956;&#x7684; commit &#x8BB0;&#x5F55;&#x5386;&#x53F2;&#x3002;</p>
+</li>
+<li><p><code>--pretty=oneline</code> &#x9009;&#x9879;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x7B80;&#x7565;&#x7248;&#x672C;&#x4FE1;&#x606F;&#x3002;</p>
+</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git reflog
+</code></pre>
+<blockquote>
+<p>&#x663E;&#x793A; HEAD &#x6307;&#x9488;&#x7684;&#x6307;&#x5411;&#x8BB0;&#x5F55;&#x5386;&#x53F2;&#x3002;</p>
+</blockquote>
+<h3 id="&#x7248;&#x672C;&#x7A7F;&#x68AD;">&#x7248;&#x672C;&#x7A7F;&#x68AD;</h3>
+<pre><code class="lang-shell">git reset --hard (HEAD^/commit_id)
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x7A7F;&#x68AD;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x7248;&#x672C;. &#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x642D;&#x914D; <code>git log</code> &#x548C; <code>git reflog</code> &#x4F7F;&#x7528;&#x3002;</li>
+<li>HEAD, HEAD^, HEAD^^... &#xFF0C;&#x8868;&#x793A;&#x6307;&#x5411;&#x5F53;&#x524D;&#x7248;&#x672C;&#x3001;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x3001;&#x4E0A;&#x4E24;&#x4E2A;&#x7248;&#x672C;... &#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git restore [files]
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x4E22;&#x5F03;&#x4FEE;&#x6539;&#xFF0C;&#x5C06;&#x6587;&#x4EF6;&#x4ECE; Unstaged &#x72B6;&#x6001;&#xFF0C;&#x53D8;&#x56DE;&#x4E0A;&#x4E00;&#x4E2A;&#x72B6;&#x6001; (&#x53EF;&#x80FD;&#x662F; Staged &#x72B6;&#x6001;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#xFF08; commited &#x72B6;&#x6001;&#xFF09;&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x7528; <code>git checkout -- [files]</code> &#x8FBE;&#x5230;&#x76F8;&#x540C;&#x7684;&#x6548;&#x679C;, &#x4F46;&#x662F;&#x4E0D;&#x5EFA;&#x8BAE;&#x3002;</li>
+<li><code>--stated</code> &#x9009;&#x9879;&#x53EF;&#x4EE5;&#x5C06; Staged &#x72B6;&#x6001;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x53D8;&#x56DE; commited &#x72B6;&#x6001;&#x3002;<ul>
+<li>&#x53EF;&#x4EE5;&#x7528; <code>git reset HEAD &lt;fiels&gt;</code> &#x8FBE;&#x5230;&#x76F8;&#x540C;&#x7684;&#x6548;&#x679C;, &#x4F46;&#x662F;&#x4E0D;&#x5EFA;&#x8BAE;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7BA1;&#x7406;">&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7BA1;&#x7406;</h2>
+<pre><code class="lang-shell">git clone url [dir]
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x514B;&#x9686;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x6539;&#x540D;&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git remote add remote url
+git remote rm remote url
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x5173;&#x8054;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x89E3;&#x9664;&#x5173;&#x8054;&#x3002;</li>
+<li>&#x4F8B;&#x5B50;&#xFF1A;<code>git remote add https://github.com/ame-lm/hi</code>&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git push remote local_branch:remote_branch
+git fetch remote remote_branch:local_branch
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x63A8;&#x9001;&#x5206;&#x652F;&#x548C;&#x53D6;&#x56DE;&#x5206;&#x652F;&#x3002;</li>
+<li>&#x53D6;&#x56DE;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x53D6;&#x56DE;&#x81F3; FETCH_HEAD &#x5206;&#x652F;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git pull remote remote_branch:local_branch
+</code></pre>
+<blockquote>
+<ul>
+<li><code>pull</code> = <code>fetch</code> + <code>merge</code> </li>
+<li>&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; <code>pull</code>&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; <code>fetch</code> + <code>merge</code></li>
+</ul>
+</blockquote>
+<h2 id="&#x5206;&#x652F;&#x7BA1;&#x7406;">&#x5206;&#x652F;&#x7BA1;&#x7406;</h2>
+<pre><code class="lang-shell">git branch
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x663E;&#x793A;&#x6240;&#x6709;&#x5206;&#x652F;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git branch br-name
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x65B0;&#x5EFA;&#x5206;&#x652F;&#xFF08;&#x9ED8;&#x8BA4;&#x57FA;&#x4E8E;&#x5F53;&#x524D;&#x5206;&#x652F;&#xFF09;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git branch -m old-br new-br
+</code></pre>
+<blockquote>
+<ul>
+<li>move &#xFF0C;&#x79FB;&#x52A8;&#x5206;&#x652F;&#x3002;&#x5E38;&#x7528;&#x4E8E;&#x6539;&#x540D;&#x3002;</li>
+<li><code>-M</code> &#x8868;&#x793A;&#x5F3A;&#x5236;&#x79FB;&#x52A8;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git branch -d br-name
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x5220;&#x9664;&#x5206;&#x652F;&#x3002;</li>
+<li><code>-D</code> &#x8868;&#x793A;&#x5F3A;&#x5236;&#x5220;&#x9664;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git branch -c old-br new-br
+</code></pre>
+<blockquote>
+<ul>
+<li>copy &#xFF0C;&#x590D;&#x5236;&#x5206;&#x652F;&#x3002;&#x5E38;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5206;&#x652F;&#x3002;</li>
+<li><code>-C</code> &#x8868;&#x793A;&#x5F3A;&#x5236;&#x590D;&#x5236;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git switch br-name
+git checkout br-name
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x5207;&#x6362;&#x5206;&#x652F;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git merge br-name
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x5408;&#x5E76;&#x5206;&#x652F;</li>
+<li><code>git merge --abort</code> &#x8868;&#x793A;&#x53D6;&#x6D88;&#x672C;&#x6B21;&#x5408;&#x5E76;&#xFF08;&#x88AB;&#x6253;&#x65AD;&#x65F6;&#x4F7F;&#x7528;&#xFF09;&#x3002;</li>
+<li><code>git merge --continuew</code> &#x8868;&#x793A;&#x7EE7;&#x7EED;&#x672C;&#x6B21;&#x5408;&#x5E76;&#xFF08;&#x88AB;&#x6253;&#x65AD;&#x65F6;&#x4F7F;&#x7528;&#xFF09;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-shell">git stash
+git stash apply
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x6682;&#x5B58;&#x5DE5;&#x4F5C;&#x533A;&#x548C;&#x6062;&#x590D;&#x5DE5;&#x4F5C;&#x533A;&#x3002;</li>
+</ul>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Git">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Git拣选操作总结" class="navigation navigation-next " aria-label="Next page: Git拣选操作总结">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Git基础命令总结","level":"1.3.1","depth":2,"next":{"title":"Git拣选操作总结","level":"1.3.2","depth":2,"path":"Git/Git拣选操作总结","ref":"Git/Git拣选操作总结","articles":[]},"previous":{"title":"Git","level":"1.3","depth":1,"path":"Git/README.md","ref":"Git/README.md","articles":[{"title":"Git基础命令总结","level":"1.3.1","depth":2,"path":"Git/Git基础命令总结.md","ref":"Git/Git基础命令总结.md","articles":[]},{"title":"Git拣选操作总结","level":"1.3.2","depth":2,"path":"Git/Git拣选操作总结","ref":"Git/Git拣选操作总结","articles":[]},{"title":"Git变基操作总结","level":"1.3.3","depth":2,"path":"Git/Git变基操作总结","ref":"Git/Git变基操作总结","articles":[]},{"title":"Git标签管理总结","level":"1.3.4","depth":2,"path":"Git/Git标签管理总结","ref":"Git/Git标签管理总结","articles":[]},{"title":"Git分支管理策略","level":"1.3.5","depth":2,"path":"Git/Git分支管理策略","ref":"Git/Git分支管理策略","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"首页":"https://ame-lm.github.io/"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"Git/Git基础命令总结.md","mtime":"2021-01-31T09:49:24.786Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-31T09:50:15.713Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
